@@ -2,6 +2,7 @@
 session_start();
 require "config.php";
 
+
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -18,6 +19,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $_SESSION['role'] = $user['role'];
         echo "Anmeldung erflogreich!";
         header("Location:dashboard.php");
+        exit;
     }else{
         echo "Üngultiger Beniutzer oder Password";
     }

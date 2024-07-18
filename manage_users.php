@@ -9,7 +9,7 @@ if (!isset($_SESSION['user_id']) || !has_permission($_SESSION['role'], 'manage_u
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Rolle aktualisieren
-    var_dump($_POST); exit;
+    // var_dump($_POST); exit;
     $user_id = $_POST['user_id'];
     $new_role = $_POST['role'];
     $stmt = $mysqli->prepare("UPDATE users SET role = ? WHERE id = ?");
